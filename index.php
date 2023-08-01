@@ -16,9 +16,55 @@
 
     <?php
 class Client {
-  
-}
+  private String $nom;
+  private String $adresse;
+  private String $mail;
+  private String $telephone;
 
+  public function getNom() :String {
+    return $this->nom;
+  }
+
+  public function setNom(String $nom) {
+    $this -> nom = $nom;
+  } 
+
+  public function getAdresse() :String {
+    return $this -> adresse ;
+  }
+   public function setAdresse(String $adresse) {
+     $this->adresse = $adresse;
+   }
+
+  public function getEmail() :String {
+    return $this -> email ;
+  }
+
+  public function setEmail(String $email) {
+    $this->email = $email;
+  }
+
+  public function getTelephone():String {
+    return $this-> telephone;
+  }
+
+  public function setTlephone(String $telephone) {
+    $this->telephone = $telephone ;
+  }
+
+  // METHODES MAGIQUES 
+  public function __get($propriete) {
+    if(property_exists($this, $propriete)){
+      return $this-> $propriete;
+    }
+  }
+
+  public function __set($propriete, $valeur) {
+    if (prorpety_exixts($this, $proriete)) {
+      $this ->$propriete = $valeur;
+    }
+  }
+}
 ?>
   </body>
 </html>
