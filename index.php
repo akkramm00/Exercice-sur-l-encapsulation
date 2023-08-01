@@ -37,7 +37,7 @@ class Client {
    }
 
   public function getEmail() :String {
-    return $this -> email ;
+    return $this ->email ;
   }
 
   public function setEmail(String $email) {
@@ -48,7 +48,7 @@ class Client {
     return $this-> telephone;
   }
 
-  public function setTlephone(String $telephone) {
+  public function setTelephone(String $telephone) {
     $this->telephone = $telephone ;
   }
 
@@ -60,11 +60,30 @@ class Client {
   }
 
   public function __set($propriete, $valeur) {
-    if (prorpety_exixts($this, $proriete)) {
+    if (property_exists($this, $propriete)) {
       $this ->$propriete = $valeur;
     }
   }
 }
+?>
+<p>
+  Avec cette classe, nous pouvons créer des objets "Client" et accéder à leurs propriétés via les méthodes publiques 'get' et 'set'.Les propriétés sont protégéées et ne peuvent etre modifiées que par les méthodes 'set'.
+</p>
+
+<?php
+$client = new Client();
+$client-> setNom("John Doe");
+$client->setAdresse("123 rue de la paix");
+$client->setEmail("johndoe@example.com");
+$client->setTelephone("0123456789");
+
+echo $client->getNom();
+echo "<br>";// affiche "John Doe"
+echo $client-> getAdresse(); // affiche "123 rue de la paix"
+echo "<br>";
+echo $client-> getEmail();
+echo "<br>";
+echo $client->getTelephone();
 ?>
   </body>
 </html>
