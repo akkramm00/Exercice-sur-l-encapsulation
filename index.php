@@ -93,7 +93,38 @@ echo $client->getTelephone();
       L'encapsulation est un concept fondamental de la programmation orientée objet qui permet de limiter l'accès aux propriétés et méthodes d'une classe .En php, cela peut etre réalisé en utilisant les niveux de visibilité tel que public,protected et privat. En limitant l'accès aux propriétés, on peut mieux controler leur utilisation et leur modification, ce qui peut eviter des erreurs et des bugs difficiles à résoudre. De plus, cela permet mieux organiser le code et de rendre le systeme plus robuste et maintenable.
       En effet, si l'accès aux propriétés n'est pas controlé, n'importe quelle partie du code peut les modifier, ce qui peut entrziner des effets de bords non désirés. En limitant leur accessibilité aux parties de code qui en ont réellement besoin, on peut renforcer l'encapsulation des données et mieux organiser le code. Cela peut également faciliter la compréhension du code ;par d'autres développeurs et rendre le code plus facile à maintenir à long terme.
     </p>
+<h2>AUTRE EXEMPLE </h2>
 
+    <?php 
+class User {
+  private $id;
+  private $name;
+  private $email;
+
+  public function  __construct(string $id, string $name, string $email) {
+  $this-> id = $id;
+  $this->name =$name;
+  $this->email = $email;
+    }
+public function getId() :String {
+  return$this->id;
+}
+public function getName() :String {
+  return $this-> name;
+}
+public function getEmail() :String {
+  return $this-> email;
+}
+
+public function setName (string $name) {
+  $$this ->name = $name;
+}
+
+public function setEmail(string $email) {
+  $this->email = $email;
+}
+  }
+?>
 
   
   </body>
